@@ -21,7 +21,9 @@
 include:
   - board: nice_nano_v2
     shield: sofle_left
+    snipnet: zmk-usb-logging
   - board: nice_nano_v2
     shield: sofle_right
+    snipnet: zmk-usb-logging
   - board: nice_nano_v2
     shield: settings_reset
