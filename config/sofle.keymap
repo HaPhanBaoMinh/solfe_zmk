@@ -38,7 +38,7 @@
         hunt_and_pick: hunt_and_pick {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(H))>;
+            bindings = <&kp LS(SPACE)>;
             label = "HUNT_AND_PICK";
         };
     };
