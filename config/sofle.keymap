@@ -41,6 +41,41 @@
             bindings = <&kp LS(SPACE)>;
             label = "HUNT_AND_PICK";
         };
+
+        alt_space: alt_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(SPACE)>;
+            label = "ALT_SPACE";
+        };
+
+        win_space: win_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "WIN_SPACE";
+        };
+
+        lock: lock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RA(DEL))>;
+            label = "LOCK";
+        };
+
+        right_desktop: right_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(RC(RIGHT))>;
+            label = "RIGHT_DESKTOP";
+        };
+
+        left_desktop: left_desktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(RC(LEFT))>;
+            label = "LEFT_DESKTOP";
+        };
     };
 
     keymap {
