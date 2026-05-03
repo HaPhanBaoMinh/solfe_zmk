@@ -31,8 +31,64 @@
         tmux_leader: tmux_leader {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(B)>;
+            bindings = <&kp LC(SPACE)>;
             label = "TMUX_LEADER";
+        };
+
+        tmux_split_v: tmux_split_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp S &kp V>;
+            label = "TMUX_SPLIT_V";
+        };
+
+        tmux_split_h: tmux_split_h {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp S &kp H>;
+            label = "TMUX_SPLIT_H";
+        };
+
+        tmux_pane_mode: tmux_pane_mode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp P>;
+            label = "TMUX_PANE_MODE";
+        };
+
+        nvim_find_files: nvim_find_files {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp F &kp F>;
+            label = "NVIM_FIND_FILES";
+        };
+
+        nvim_live_grep: nvim_live_grep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp F &kp G>;
+            label = "NVIM_LIVE_GREP";
+        };
+
+        nvim_toggle_tree: nvim_toggle_tree {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp E>;
+            label = "NVIM_TOGGLE_TREE";
+        };
+
+        nvim_terminal: nvim_terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp T &kp T>;
+            label = "NVIM_TERMINAL";
+        };
+
+        nvim_save: nvim_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S)>;
+            label = "NVIM_SAVE";
         };
 
         hunt_and_pick: hunt_and_pick {
@@ -137,11 +193,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans            &trans             &trans        &trans     &trans         &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &trans     &kp N0         &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &tmux_leader      &tmux_split_h      &tmux_split_v &tmux_pane_mode  &nvim_save  &trans
+&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &nvim_find_files &nvim_live_grep  &trans
 &trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp LEFT          &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT  &kp DEL        &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans            &trans             &trans        &trans     &kp BACKSLASH  &trans
-                          &trans        &trans        &trans        &trans        &trans    &tmux_leader  &hunt_and_pick    &trans             &trans        &trans
+                          &trans        &trans        &trans        &trans        &trans    &trans        &tmux_leader      &hunt_and_pick     &nvim_toggle_tree  &nvim_terminal
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
