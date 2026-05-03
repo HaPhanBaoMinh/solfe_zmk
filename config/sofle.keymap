@@ -35,39 +35,67 @@
             label = "TMUX_LEADER";
         };
 
-        tmux_split_v: tmux_split_v {
+        tmux_group_split: tmux_group_split {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(SPACE) &kp S &kp V>;
-            label = "TMUX_SPLIT_V";
+            bindings = <&kp LC(SPACE) &kp S>;
+            label = "TMUX_GROUP_SPLIT";
         };
 
-        tmux_split_h: tmux_split_h {
+        tmux_group_windows: tmux_group_windows {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(SPACE) &kp S &kp H>;
-            label = "TMUX_SPLIT_H";
+            bindings = <&kp LC(SPACE) &kp W>;
+            label = "TMUX_GROUP_WINDOWS";
         };
 
-        tmux_pane_mode: tmux_pane_mode {
+        tmux_group_panes: tmux_group_panes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(SPACE) &kp P>;
-            label = "TMUX_PANE_MODE";
+            label = "TMUX_GROUP_PANES";
         };
 
-        nvim_find_files: nvim_find_files {
+        tmux_group_sessions: tmux_group_sessions {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SPACE &kp F &kp F>;
-            label = "NVIM_FIND_FILES";
+            bindings = <&kp LC(SPACE) &kp T>;
+            label = "TMUX_GROUP_SESSIONS";
         };
 
-        nvim_live_grep: nvim_live_grep {
+        nvim_group_action: nvim_group_action {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SPACE &kp F &kp G>;
-            label = "NVIM_LIVE_GREP";
+            bindings = <&kp SPACE &kp A>;
+            label = "NVIM_GROUP_ACTION";
+        };
+
+        nvim_group_split: nvim_group_split {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp S>;
+            label = "NVIM_GROUP_SPLIT";
+        };
+
+        nvim_group_find: nvim_group_find {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp F>;
+            label = "NVIM_GROUP_FIND";
+        };
+
+        nvim_group_git: nvim_group_git {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp G>;
+            label = "NVIM_GROUP_GIT";
+        };
+
+        nvim_group_term: nvim_group_term {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp T>;
+            label = "NVIM_GROUP_TERM";
         };
 
         nvim_toggle_tree: nvim_toggle_tree {
@@ -75,13 +103,6 @@
             #binding-cells = <0>;
             bindings = <&kp SPACE &kp E>;
             label = "NVIM_TOGGLE_TREE";
-        };
-
-        nvim_terminal: nvim_terminal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp T &kp T>;
-            label = "NVIM_TERMINAL";
         };
 
         nvim_save: nvim_save {
@@ -193,11 +214,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &tmux_leader      &tmux_split_h      &tmux_split_v &tmux_pane_mode  &nvim_save  &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &nvim_find_files &nvim_live_grep  &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp LEFT          &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT  &kp DEL        &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &tmux_leader      &tmux_group_split  &tmux_group_windows  &tmux_group_panes  &tmux_group_sessions  &nvim_save
+&trans      &kp INS       &kp PSCRN     &nvim_toggle_tree   &trans    &nvim_group_term                &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &trans      &kp N0         &trans
+&trans      &nvim_group_action  &nvim_group_split  &kp LSHFT  &nvim_group_find  &nvim_group_git   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &kp DEL      &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans            &trans             &trans        &trans     &kp BACKSLASH  &trans
-                          &trans        &trans        &trans        &trans        &trans    &trans        &tmux_leader      &hunt_and_pick     &nvim_toggle_tree  &nvim_terminal
+                          &trans        &trans        &trans        &trans        &trans    &nvim_save    &tmux_leader      &hunt_and_pick     &nvim_group_find   &nvim_group_split
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
