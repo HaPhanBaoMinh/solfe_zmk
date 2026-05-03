@@ -214,11 +214,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &tmux_leader      &tmux_group_split  &tmux_group_windows  &tmux_group_panes  &tmux_group_sessions  &nvim_save
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &nvim_save        &tmux_group_split  &tmux_group_windows  &tmux_group_panes  &tmux_group_sessions  &trans
 &trans      &kp INS       &kp PSCRN     &nvim_toggle_tree   &trans    &nvim_group_term                &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &trans      &kp N0         &trans
 &trans      &nvim_group_action  &nvim_group_split  &kp LSHFT  &nvim_group_find  &nvim_group_git   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &kp DEL      &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans            &trans             &trans        &trans     &kp BACKSLASH  &trans
-                          &trans        &trans        &trans        &trans        &trans    &nvim_save    &tmux_leader      &hunt_and_pick     &nvim_group_find   &nvim_group_split
+                          &trans        &trans        &trans        &trans        &trans    &trans        &tmux_leader      &nvim_group_find   &nvim_group_split  &nvim_group_term
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
