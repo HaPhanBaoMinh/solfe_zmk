@@ -38,7 +38,7 @@ Changes from `main`:
 
 ## Raise layer
 
-Unchanged: Bluetooth, arrows, edit shortcuts (undo/cut/copy/paste), **Alt/Ctrl/Shift** taps for combos that do not conflict with nvim when you momentarily switch layers.
+Unchanged: arrows, edit shortcuts (undo/cut/copy/paste), **Alt/Ctrl/Shift** taps for combos that do not conflict with nvim when you momentarily switch layers.
 
 ## Encoders
 
