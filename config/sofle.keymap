@@ -208,15 +208,15 @@
             display-name = "raise";
 
             // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                | USB  | BLE  | BTCLR | BT1  | BT2   | BT3   |
+            // |       | INS  | PSCR | GUI   |       |      |                | BT4  | BT5  |   ^   |      |       |       |
             // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
             // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &nvim_save        &tmux_group_split  &tmux_group_windows  &tmux_group_panes  &tmux_group_sessions  &trans
-&trans      &kp INS       &kp PSCRN     &nvim_toggle_tree   &trans    &nvim_group_term                &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp UP        &trans      &kp N0         &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &out OUT_USB      &out OUT_BLE      &bt BT_CLR          &bt BT_SEL 0      &bt BT_SEL 1        &bt BT_SEL 2
+&trans      &kp INS       &kp PSCRN     &nvim_toggle_tree   &trans    &nvim_group_term                &bt BT_SEL 3      &bt BT_SEL 4      &kp UP              &trans            &kp N0              &trans
 &trans      &nvim_group_action  &nvim_group_split  &kp LSHFT  &nvim_group_find  &nvim_group_git   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &kp DEL      &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans            &trans             &trans        &trans     &kp BACKSLASH  &trans
                           &trans        &trans        &trans        &trans        &trans    &trans        &tmux_leader      &nvim_group_find   &nvim_group_split  &nvim_group_term
