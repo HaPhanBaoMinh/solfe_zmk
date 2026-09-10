@@ -212,11 +212,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_SEL 4                      &none     &none           &none         &none      &none  &none
-&none  &none         &none              &none         &none             &none                             &none     &none           &none         &none      &none  &none
-&none  &none         &nvim_group_split  &kp LSHFT     &nvim_group_find  &nvim_group_git                   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none  &none
-&none  &none         &kp K_CUT          &kp K_COPY    &kp K_PASTE       &trans           &trans    &none  &none     &none           &none         &none      &none  &none
-                     &trans             &trans        &trans            &trans           &trans    &none  &none     &none           &none         &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none     &none           &none         &none      &none  &none
+&none  &none         &none         &none         &none         &none                         &none     &none           &none         &none      &none  &none
+&none  &none         &none         &none         &none         &none                         &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none  &none
+&none  &none         &none         &none         &none         &none         &none    &none  &none     &none           &none         &none      &none  &none
+                     &none         &none         &none         &none         &none    &none  &none     &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
